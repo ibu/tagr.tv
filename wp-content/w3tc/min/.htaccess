@@ -1,0 +1,29 @@
+# BEGIN W3TC Minify
+<IfModule mod_mime.c>
+    AddEncoding gzip .gzip
+    <Files *.css.gzip>
+        ForceType text/css
+    </Files>
+    <Files *.js.gzip>
+        ForceType application/x-javascript
+    </Files>
+</IfModule>
+<IfModule mod_deflate.c>
+    <IfModule mod_setenvif.c>
+        SetEnvIfNoCase Request_URI \.gzip$ no-gzip
+    </IfModule>
+</IfModule>
+<IfModule mod_headers.c>
+    Header set X-Powered-By "W3 Total Cache/0.9.1.3"
+    Header set Vary "Accept-Encoding"
+</IfModule>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /tagr.tv/wp-content/w3tc/min/
+    RewriteCond %{HTTP:Accept-Encoding} gzip
+    RewriteRule .* - [E=APPEND_EXT:.gzip]
+    RewriteCond %{REQUEST_FILENAME}%{ENV:APPEND_EXT} -f
+    RewriteRule (.*) $1%{ENV:APPEND_EXT} [L]
+    RewriteRule ^([a-f0-9]+)\/(.+)\.(include(\-(footer|body))?(-nb)?)\.[0-9]+\.(css|js)$ index.php?tt=$1&gg=$2&g=$3&t=$7 [L]
+</IfModule>
+# END W3TC Minify
