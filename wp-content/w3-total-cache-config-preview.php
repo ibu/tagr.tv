@@ -1,7 +1,7 @@
 <?php
 
 return array(
-	'dbcache.enabled' => false,
+	'dbcache.enabled' => true,
 	'dbcache.debug' => false,
 	'dbcache.engine' => 'file',
 	'dbcache.file.gc' => 3600,
@@ -20,7 +20,7 @@ return array(
 		1 => 'wp_rg_',
 	),
 	'dbcache.lifetime' => 180,
-	'objectcache.enabled' => false,
+	'objectcache.enabled' => true,
 	'objectcache.debug' => false,
 	'objectcache.engine' => 'file',
 	'objectcache.file.gc' => 3600,
@@ -110,28 +110,91 @@ return array(
 	),
 	'minify.lifetime' => 86400,
 	'minify.upload' => true,
-	'minify.html.enable' => false,
+	'minify.html.enable' => true,
 	'minify.html.reject.feed' => false,
-	'minify.html.inline.css' => false,
-	'minify.html.inline.js' => false,
-	'minify.html.strip.crlf' => false,
+	'minify.html.inline.css' => true,
+	'minify.html.inline.js' => true,
+	'minify.html.strip.crlf' => true,
 	'minify.html.comments.ignore' => array(
 		0 => 'google_ad_section_',
 		1 => 'RSPEAK_',
 	),
 	'minify.css.enable' => true,
 	'minify.css.combine' => false,
-	'minify.css.strip.comments' => false,
-	'minify.css.strip.crlf' => false,
+	'minify.css.strip.comments' => true,
+	'minify.css.strip.crlf' => true,
 	'minify.css.groups' => array(
+		'52977d' => array(
+			'default' => array(
+				'include' => array(
+					'files' => array(
+						0 => 'tagr.tv/wp-content/themes/k2/style.css',
+						1 => 'tagr.tv/wp-content/themes/tagrk2/style.css',
+					),
+				),
+			),
+		),
 	),
 	'minify.js.enable' => true,
 	'minify.js.combine.header' => false,
 	'minify.js.combine.body' => false,
 	'minify.js.combine.footer' => false,
-	'minify.js.strip.comments' => false,
-	'minify.js.strip.crlf' => false,
+	'minify.js.strip.comments' => true,
+	'minify.js.strip.crlf' => true,
 	'minify.js.groups' => array(
+		'52977d' => array(
+			'default' => array(
+				'include' => array(
+					'blocking' => true,
+					'files' => array(
+						0 => 'http://tagr.tv/tagr.tv/wp-includes/js/jquery/jquery.js?ver=1.4.2',
+						1 => 'http://tagr.tv/tagr.tv/wp-content/themes/k2/js/uncompressed/jquery.hoverintent.js?ver=5',
+						2 => 'http://tagr.tv/tagr.tv/wp-content/themes/k2/js/uncompressed/jquery.superfish.js?ver=1.4.8',
+						3 => 'http://tagr.tv/tagr.tv/wp-content/themes/k2/js/uncompressed/k2.functions.js?ver=1.1',
+						4 => 'http://tagr.tv/tagr.tv/wp-content/themes/k2/js/uncompressed/jquery.bbq.js?ver=1.2.1',
+						5 => 'http://tagr.tv/tagr.tv/wp-content/themes/k2/js/uncompressed/jquery.easing.js?ver=1.3',
+						6 => 'http://tagr.tv/tagr.tv/wp-content/themes/k2/js/uncompressed/k2.slider.js?ver=1.1',
+						7 => 'http://tagr.tv/tagr.tv/wp-content/themes/k2/js/uncompressed/jquery.hotkeys.js?ver=0.8',
+						8 => 'http://tagr.tv/tagr.tv/wp-content/themes/k2/js/uncompressed/k2.livesearch.js?ver=1.1',
+						9 => 'http://tagr.tv/tagr.tv/wp-content/themes/k2/js/uncompressed/k2.rollingarchives.js?ver=1.1',
+						10 => 'http://tagr.tv/tagr.tv/wp-content/themes/k2/js/uncompressed/jquery.ui.js?ver=1.8.2',
+						11 => 'wp-content/themes/tagrk2/js/qTip.js',
+					),
+				),
+			),
+			'single' => array(
+				'include' => array(
+					'blocking' => true,
+					'files' => array(
+						0 => 'http://tagr.tv/tagr.tv/wp-includes/js/comment-reply.js?ver=20090102',
+					),
+				),
+			),
+			'image' => array(
+				'include' => array(
+					'blocking' => true,
+					'files' => array(
+						0 => 'http://tagr.tv/tagr.tv/wp-includes/js/comment-reply.js?ver=20090102',
+					),
+				),
+			),
+			'page-archives' => array(
+				'include' => array(
+					'blocking' => true,
+					'files' => array(
+						0 => 'http://tagr.tv/tagr.tv/wp-includes/js/comment-reply.js?ver=20090102',
+					),
+				),
+			),
+			'attachment' => array(
+				'include' => array(
+					'blocking' => true,
+					'files' => array(
+						0 => 'http://tagr.tv/tagr.tv/wp-includes/js/comment-reply.js?ver=20090102',
+					),
+				),
+			),
+		),
 	),
 	'minify.reject.ua' => array(
 	),
@@ -210,26 +273,26 @@ return array(
 		1 => 'sitemap\\.xml(\\.gz)?',
 	),
 	'browsercache.cssjs.compression' => true,
-	'browsercache.cssjs.expires' => false,
+	'browsercache.cssjs.expires' => true,
 	'browsercache.cssjs.lifetime' => 31536000,
-	'browsercache.cssjs.cache.control' => false,
+	'browsercache.cssjs.cache.control' => true,
 	'browsercache.cssjs.cache.policy' => 'cache_validation',
-	'browsercache.cssjs.etag' => false,
-	'browsercache.cssjs.w3tc' => true,
+	'browsercache.cssjs.etag' => true,
+	'browsercache.cssjs.w3tc' => false,
 	'browsercache.html.compression' => true,
-	'browsercache.html.expires' => false,
+	'browsercache.html.expires' => true,
 	'browsercache.html.lifetime' => 3600,
-	'browsercache.html.cache.control' => false,
+	'browsercache.html.cache.control' => true,
 	'browsercache.html.cache.policy' => 'cache_validation',
-	'browsercache.html.etag' => false,
+	'browsercache.html.etag' => true,
 	'browsercache.html.w3tc' => true,
 	'browsercache.other.compression' => true,
-	'browsercache.other.expires' => false,
+	'browsercache.other.expires' => true,
 	'browsercache.other.lifetime' => 31536000,
-	'browsercache.other.cache.control' => false,
+	'browsercache.other.cache.control' => true,
 	'browsercache.other.cache.policy' => 'cache_validation',
-	'browsercache.other.etag' => false,
-	'browsercache.other.w3tc' => true,
+	'browsercache.other.etag' => true,
+	'browsercache.other.w3tc' => false,
 	'mobile.enabled' => true,
 	'mobile.rgroups' => array(
 		'high' => array(
@@ -398,8 +461,8 @@ return array(
 	'notes.cdn_upload' => false,
 	'notes.need_empty_pgcache' => false,
 	'notes.need_empty_minify' => false,
-	'notes.pgcache_rules_core' => true,
-	'notes.pgcache_rules_cache' => true,
+	'notes.pgcache_rules_core' => false,
+	'notes.pgcache_rules_cache' => false,
 	'notes.minify_rules' => true,
 	'notes.support_us' => false,
 	'notes.no_curl' => true,
