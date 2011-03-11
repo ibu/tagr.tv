@@ -55,6 +55,7 @@ defined( 'K2_CURRENT' ) or die ( __('Error: This file can not be loaded directly
 
 
 		<a href="<?php echo get_settings('siteurl'); ?>" id="homelink" title="home / reset tagr.tv"><i>tagr.tv</i></a>
+
 	<div id="filters">
       <?php wp_nav_menu( array( 'theme_location' => 'categories' ) ); ?>
 	</div>
